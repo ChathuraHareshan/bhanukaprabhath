@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - [Your Name]</title>
+    <style>
+        /* --- CSS STYLES --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f4f4f4; color: #333; }
+        
+        /* Header & Navigation */
+        header { background-color: #4a2c2c; color: #fff; padding: 20px 0; text-align: center; border-bottom: 4px solid #e74c3c; }
+        header h1 { font-size: 2.5rem; letter-spacing: 2px; }
+        
+        nav { background-color: #e74c3c; display: flex; justify-content: center; flex-wrap: wrap; padding: 10px 0; }
+        nav a { color: #fff; text-decoration: none; padding: 10px 20px; margin: 0 5px; font-weight: bold; transition: 0.3s; cursor: pointer; }
+        nav a:hover { background-color: #c0392b; border-radius: 5px; }
+        nav a.active { background-color: #c0392b; border-radius: 5px; }
+
+        /* Main Content Area */
+        .container { max-width: 1000px; margin: 20px auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); min-height: 500px; }
+
+        /* Page Content Styles */
+        .page-content { display: none; animation: fadeIn 0.5s; }
+        .page-content.active { display: block; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        h2 { border-bottom: 2px solid #e74c3c; padding-bottom: 10px; margin-bottom: 20px; color: #333; }
+        
+        /* Image Gallery (Grid) */
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; }
+        .gallery-item { background: #eee; padding: 20px; text-align: center; border-radius: 8px; border: 1px solid #ddd; }
+        .gallery-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; background-color: #ddd; }
+
+        /* Text Layout - Image Float */
+        .profile-row { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; margin-bottom: 20px; }
+        .profile-row img { width: 300px; height: auto; border-radius: 8px; border: 2px solid #eee; }
+        .profile-text { flex: 1; }
+
+        /* Lists */
+        ul { padding-left: 20px; line-height: 1.8; }
+        ul li { margin-bottom: 5px; }
+
+        /* Footer */
+        footer { background-color: #2c3e50; color: #bdc3c7; text-align: center; padding: 20px 0; margin-top: 30px; }
+        footer a { color: #e74c3c; text-decoration: none; }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            nav { flex-direction: column; align-items: center; }
+            nav a { width: 100%; text-align: center; margin: 2px 0; }
+            .profile-row { flex-direction: column; text-align: center; }
+            .profile-row img { width: 100%; max-width: 300px; margin: 0 auto; }
+            .container { padding: 15px; margin: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>[YOUR NAME]</h1>
+        <p>Welcome to My Personal & Professional Profile</p>
+    </header>
+
+    <nav id="mainNav">
+        <a href="#home" class="active" onclick="showPage('home')">Home</a>
+        <a href="#about" onclick="showPage('about')">About Me</a>
+        <a href="#institute" onclick="showPage('institute')">My Institute</a>
+        <a href="#training" onclick="showPage('training')">Training Program</a>
+        <a href="#lecturers" onclick="showPage('lecturers')">Lecturers</a>
+        <a href="#projects" onclick="showPage('projects')">Projects</a>
+        <a href="#gallery" onclick="showPage('gallery')">Gallery</a>
+        <a href="#contact" onclick="showPage('contact')">Contact</a>
+    </nav>
+
+    <div class="container">
+        <!-- PAGE 1: HOME -->
+        <div id="home" class="page-content active">
+            <h2>Success comes to those who go to it.</h2>
+            <div class="profile-row">
+                <div class="profile-text">
+                    <p>Hi all, my name is <strong>[Your Name]</strong>. This is my profile website.</p>
+                    <p>I am a dedicated student at [Your Institute Name], pursuing a career in Information Technology. This portfolio showcases my academic journey, my extracurricular achievements including Karate and Robotics, and my professional aspirations.</p>
+                    <br>
+                    <h3>Quick Facts:</h3>
+                    <ul>
+                        <li><strong>Astronomy:</strong> Merit pass with 55 marks.</li>
+                        <li><strong>Martial Arts:</strong> Karate Shotokan Brown Belt.</li>
+                        <li><strong>Robotics:</strong> 1st Place - SLIT Robofest Gampaha 2019.</li>
+                    </ul>
+                </div>
+                <img src="https://via.placeholder.com/300x200?text=My+Profile+Photo" alt="Profile Image">
+            </div>
+        </div>
+
+        <!-- PAGE 2: ABOUT ME -->
+        <div id="about" class="page-content">
+            <h2>About Me</h2>
+            <p>I am a friendly and hard-working individual who strives to achieve targets with discipline. My journey in Karate has taught me patience, while my interest in Astronomy has given me a logical view of the world.</p>
+            <p>I aim to combine my technical skills with my creative problem-solving abilities to excel in the IT industry.</p>
+            
+            <div class="gallery" style="grid-template-columns: 1fr 1fr;">
+                <div class="gallery-item"><img src="https://via.placeholder.com/300x200?text=Karate+Brown+Belt" alt="Karate"><p>Karate Shotokan</p></div>
+                <div class="gallery-item"><img src="https://via.placeholder.com/300x200?text=Astronomy" alt="Astronomy"><p>Astronomy Enthusiast</p></div>
+            </div>
+        </div>
+
+        <!-- PAGE 3: MY INSTITUTE -->
+        <div id="institute" class="page-content">
+            <h2>My Higher Education Institute</h2>
+            <p>I am currently studying at <strong>[Your Institute Name]</strong>. It is a premier institution dedicated to providing high-quality education in the field of Information Technology and Business.</p>
+            <div class="gallery">
+                <div class="gallery-item"><img src="https://via.placeholder.com/300x200?text=Campus+Front" alt="Campus"></div>
+                <div class="gallery-item"><img src="https://via.placeholder.com/300x200?text=Classroom" alt="Class"></div>
+            </div>
+        </div>
+
+        <!-- PAGE 4: TRAINING PROGRAM -->
+        <div id="training" class="page-content">
+            <h2>My Training Program</h2>
+            <p>My current coursework covers the fundamental aspects of Information Technology, including:</p>
+            <ul>
+                <li>Introduction to World Wide Web & Blogging</li>
+                <li>Web Development (HTML, CSS, JavaScript)</li>
+                <li>Database Management</li>
+                <li>Networking Basics</li>
+            </ul>
+            <p>This training is preparing me for a successful career in the tech industry.</p>
+        </div>
+
+        <!-- PAGE 5: LECTURERS -->
+        <div id="lecturers" class="page-content">
+            <h2>My Lecturers</h2>
+            <p>I have been guided by experienced and supportive lecturers throughout my journey. They have taught me valuable skills in both technical knowledge and professional ethics.</p>
+            <div class="gallery">
+                <div class="gallery-item"><img src="https://via.placeholder.com/300x200?text=Lecturer+1" alt="Lecturer"><p>Mr. [Name]</p></div>
+                <div class="gallery-item"><img src="https://via.placeholder.com/300x200?text=Lecturer+2" alt="Lecturer"><p>Ms. [Name]</p></div>
+            </div>
+            <p style="margin-top:20px; font-style:italic;">* Note: Permission letters for publishing these images have been submitted to the administration.</p>
+        </div>
+
+        <!-- PAGE 6: PROJECTS -->
+        <div id="projects" class="page-content">
+            <h2>Commercial & Non-Profit Projects</h2>
+            <h3>SLIT Robofest Gampaha 2019 - 1st Place</h3>
+            <p>This was my proudest achievement in robotics. Our team designed and built a robotic system that successfully completed a complex obstacle course and automation task.</p>
+            <ul>
+                <li><strong>Role:</strong> Lead Programmer & Builder</li>
+                <li><strong>Technology:</strong> Arduino, Sensors, C++</li>
+                <li><strong>Outcome:</strong> Awarded 1st Place among 20 competing teams.</li>
+            </ul>
+            <div class="gallery" style="grid-template-columns: 1fr;">
+                <div class="gallery-item"><img src="https://via.placeholder.com/600x300?text=Robofest+Trophy+2019" alt="Robofest"></div>
+            </div>
+        </div>
+
+        <!-- PAGE 7: GALLERY -->
+        <div id="gallery" class="page-content">
+            <h2>Photo Gallery</h2>
+            <p>Here is a collection of memories from my life and studies.</p>
+            <div class="gallery">
+                <div class="gallery-item"><img src="https://via.placeholder.com/300x200?text=Graduation" alt="Grad"></div>
+                <div class="gallery-item"><img src="https://via.placeholder.com/300x200?text=Robotics+Team" alt="Team"></div>
+                <div class="gallery-item"><img src="https://via.placeholder.com/300x200?text=Stargazing" alt="Stars"></div>
+                <div class="gallery-item"><img src="https://via.placeholder.com/300x200?text=Karate+Class" alt="Karate"></div>
+            </div>
+        </div>
+
+        <!-- PAGE 8: CONTACT -->
+        <div id="contact" class="page-content">
+            <h2>Contact Me</h2>
+            <p>If you would like to collaborate or have any questions, feel free to reach out!</p>
+            <ul>
+                <li><strong>Email:</strong> yourname@example.com</li>
+                <li><strong>LinkedIn:</strong> linkedin.com/in/yourname</li>
+                <li><strong>GitHub:</strong> github.com/yourname</li>
+            </ul>
+            <div style="margin-top:20px; padding:20px; background:#f9f9f9; border-radius:5px;">
+                <h3>Send a Message</h3>
+                <input type="text" placeholder="Your Name" style="width:100%; padding:8px; margin-bottom:10px;">
+                <input type="email" placeholder="Your Email" style="width:100%; padding:8px; margin-bottom:10px;">
+                <textarea placeholder="Message" rows="4" style="width:100%; padding:8px; margin-bottom:10px;"></textarea>
+                <button style="background:#e74c3c; color:#fff; border:none; padding:10px 20px; cursor:pointer;">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 [Your Name]. All rights reserved.</p>
+        <p>Built for Assignment H7DJ 04/AS/16 - Introduction to World Wide Web with Blogs</p>
+    </footer>
+
+    <script>
+        // JAVASCRIPT - Handles the navigation without reloading the page
+        function showPage(pageId) {
+            // 1. Hide all page contents
+            var contents = document.getElementsByClassName('page-content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active');
+            }
+
+            // 2. Show the selected page
+            var selected = document.getElementById(pageId);
+            if(selected) {
+                selected.classList.add('active');
+            }
+
+            // 3. Update active menu link styling
+            var links = document.getElementById('mainNav').getElementsByTagName('a');
+            for (var i = 0; i < links.length; i++) {
+                links[i].classList.remove('active');
+                if (links[i].getAttribute('href') === '#' + pageId) {
+                    links[i].classList.add('active');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
